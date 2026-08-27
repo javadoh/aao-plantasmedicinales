@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.activities.DetailResActivity"
+    android:id="@+id/mainRelativeLayoutDetail"
+    android:background="#000000">
+
+
+    <!--<fragment   ESTO HACE QUE DE ERROR AL ROTAR LA VISTA DEL FRAGMENTO SE CAMBIA POR FRAMELAYOUT
+        android:id="@+id/detail_res_fragment_id"
+        android:name="luiseliberal.com.symptomsandherbs.ui.fragments.DetailResFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        tools:layout="@layout/detail_res_herb_fragment" />-->
+
+    <FrameLayout android:id="@+id/detail_res_fragment_id"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        tools:layout="@layout/detail_res_herb_fragment"
+        android:background="@drawable/abstract_herb_70" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adBannerView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/adbanner"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentStart="false">
+    </com.google.android.gms.ads.AdView>
+
+</RelativeLayout>

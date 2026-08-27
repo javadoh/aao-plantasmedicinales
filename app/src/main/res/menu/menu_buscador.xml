@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.activities.BuscadorActivity">
+
+    <item
+        android:id="@+id/action_store"
+        android:icon="@drawable/store_icon"
+        android:orderInCategory="100"
+        android:title="@string/menuStoreTitle"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_faq"
+        android:icon="@drawable/question"
+        android:orderInCategory="200"
+        android:title="@string/menuFaqTitle"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_favoritos"
+        android:icon="@drawable/question"
+        android:orderInCategory="300"
+        android:title="@string/menuFavTitle"
+        android:visible="false"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_compartir"
+        android:icon="@drawable/abc_ic_menu_share_mtrl_alpha"
+        android:orderInCategory="400"
+        android:title="@string/menuShareTitle"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_logout_facebook"
+        android:icon="@drawable/facebook_icon"
+        android:orderInCategory="500"
+        android:title="@string/menuLogInOutTitle"
+        android:visible="false"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_enable_disable_sound"
+        android:icon="@drawable/mute"
+        android:orderInCategory="600"
+        android:title="@string/menuSoundTitle"
+        app:showAsAction="ifRoom" />
+
+</menu>

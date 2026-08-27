@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.activities.BuscadorActivity"
+    android:orientation="vertical"
+    android:background="#020202">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/tool_bar"
+        ></include>
+
+    <com.javadoh.plantasmedicinalesnaturales.utils.DynamicBackImage
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/backgif"
+        android:src="@drawable/beautifulforest"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop" />
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:src="@drawable/news"
+        android:id="@+id/imgNews"
+        android:clickable="true"
+        android:onClick="newsDialog"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="40dp"
+        android:layout_above="@+id/layoutTextInputSearch"
+        android:contentDescription="@string/newsapp"
+        />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/layoutTextInputSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:hint="@string/hintSearch"
+        android:textColorHint="#FFFFFF"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_busqueda"
+        android:gravity="center"
+        android:shadowColor = "#000000"
+        android:shadowRadius="5.0"
+        android:shadowDx="5.0"
+        android:shadowDy="4.3"
+        android:textColorHint="#FFFFFF"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#FFFFFF"
+        android:textColorLink="@color/colorSecondaryText"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:inputType="text"
+        />
+    </android.support.design.widget.TextInputLayout>
+
+    <LinearLayout
+        android:id="@+id/linearlayoutppalhome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="4.0dip"
+        android:paddingTop="5.0dip"
+        android:paddingRight="4.0dip"
+        android:paddingBottom="1.0dip"
+        android:layout_below="@+id/layoutTextInputSearch"
+        android:gravity="center">
+
+    <Button
+        android:layout_width="130dp"
+        android:layout_height="40dp"
+        android:background="@drawable/btn_verde"
+        android:id="@+id/btn_busqueda_hierbas"
+        android:text="@string/busqueda_hierba"
+        android:textColor="@color/colorSecondaryText"
+        android:textStyle="bold"
+        android:alpha=".60"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginRight="15dp"
+        />
+
+    <Button
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:background="@drawable/btn_verde"
+        android:id="@+id/btn_busqueda_sintomas"
+        android:text="@string/busqueda_sintoma"
+        android:textColor="@color/colorSecondaryText"
+        android:textStyle="bold"
+        android:alpha=".60"
+        android:gravity="center"
+        android:layout_marginLeft="15dp"
+        />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_below="@+id/linearlayoutppalhome"
+        android:id="@+id/linearLayoutSecondary">
+    <CheckBox
+        android:id="@+id/idCheckTerms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:textColor="@color/termsandconditionstext"
+        android:textSize="12dp"
+        android:contentDescription="@string/termscheckselection"
+        android:theme="@style/HomeCheckBox"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/textTermsConditionsHome"
+            android:textColor="@color/colorSecondaryText"
+            android:text="@string/terminos_pantalla_inicio"
+            android:textSize="9dp"
+            android:gravity="center_vertical"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/textTermsConditionsClickable"
+            android:textColor="@color/checkedboxTermsHome"
+            android:text="@string/terminos_clickable_inicio"
+            android:textSize="9dp"
+            android:gravity="center_vertical"
+            android:singleLine="true"
+            android:layout_marginLeft="4dp"
+            android:layout_toRightOf="@+id/textTermsConditionsHome"
+            />
+    </LinearLayout>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adBannerView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:contentDescription="@string/bannerpubend"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/adbanner">
+    </com.google.android.gms.ads.AdView>
+</RelativeLayout>

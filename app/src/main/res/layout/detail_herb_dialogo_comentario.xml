@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF">
+
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="250dp"
+    android:minHeight="150dp"
+    android:id="@+id/idLinearComentario"
+    >
+
+    <LinearLayout android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#293082">
+
+        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textDialogoTitulo"
+        android:text="@string/titulo_dialogo_comentario"
+        android:textSize="20dp"
+        android:textColor="#FFFFFF"
+        android:gravity="center"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"/>
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp">
+
+    <!--<ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/profileFaceImg"
+        android:layout_marginBottom="30dp"
+        />-->
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/layoutNombreUsuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hintCommentName"
+        android:id="@+id/nombreUsuario"
+        android:textColor="#293082"
+        android:textColorHint="#6f7072" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/layoutEmailUsuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:id="@+id/emailUsuario"
+        android:hint="@string/hintCommentEmail"
+        android:textColor="#293082"
+        android:textColorHint="#6f7072" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/layoutComentario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <EditText
+        android:id="@+id/comentario"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:hint="@string/hintCommentText"
+        android:inputType="text|textMultiLine"
+        android:gravity="top"
+        android:textColor="#293082"
+        android:textColorHint="#6f7072"
+        />
+    </android.support.design.widget.TextInputLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnTomarDatosFacecbook"
+        android:textColor="@color/colorSecondaryText"
+        android:background="@drawable/btn_azul"
+        android:text="@string/btnfacebookasociar"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        />
+
+        </LinearLayout>
+
+</LinearLayout>
+    </ScrollView>

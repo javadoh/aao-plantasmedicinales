@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Upgraded to MaterialComponents to support modern TextInputLayouts on SDK 35 -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/htmlLinks</item>
+        <item name="android:textColor">@color/colorPrimaryText</item>
+        <item name="android:textColorSecondary">@color/colorSecondaryText</item>
+    </style>
+
+    <style name="HomeCheckBox" parent="Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="colorControlActivated">@color/checkedboxTermsHome</item>
+        <item name="colorControlNormal">@color/uncheckedboxTermsHome</item>
+    </style>
+
+    <style name="TextAppearence.App.TextInputLayout" parent="TextAppearance.Design.Hint">
+        <item name="android:textColor">@color/colorSecondaryText</item>
+        <item name="android:textColorHint">@color/colorSecondaryText</item>
+        <item name="colorControlActivated">@color/colorSecondaryText</item>
+        <item name="colorControlHighlight">@color/colorSecondaryText</item>
+        <item name="colorControlNormal">@color/colorSecondaryText</item>
+    </style>
+</resources>
