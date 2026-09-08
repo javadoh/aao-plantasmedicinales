@@ -1,0 +1,25 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="activity_buscador_logo_margin">32dp</dimen>
+    <dimen name="activity_buscador_texto_margin">64dp</dimen>
+    <!-- DIALOGOS -->
+    <dimen name="dialog_margin_title">32dp</dimen>
+    <dimen name="dialog_margin">16dp</dimen>
+    <!--PAGINA FRAGMENTO FLOATS-->
+    <dimen name="margin_top_scrollfrag_item">20dip</dimen>
+    <dimen name="margin_left_scrollfrag_item">0dp</dimen>
+    <dimen name="margin_right_scrollfrag_item">0dp</dimen>
+    <dimen name="margin_bottom_scrollfrag_item">25dp</dimen>
+    <dimen name="margin_bottomPub_scrollfrag_item">25dp</dimen>
+
+    <dimen name="margin_top_floatbtn_item">5dp</dimen>
+    <dimen name="margin_left_floatbtnreg_item">0dp</dimen>
+    <dimen name="margin_left_floatbtncom_item">10dp</dimen>
+    <dimen name="margin_right_floatbtnreg_item">10dp</dimen>
+    <dimen name="margin_right_floatbtncom_item">0dp</dimen>
+    <dimen name="margin_bottom_floatbtn_item">5dp</dimen>
+    <!--CON BANNER PUB-->
+    <dimen name="margin_bottomPub_floatbtn_item">20dip</dimen>
+</resources>

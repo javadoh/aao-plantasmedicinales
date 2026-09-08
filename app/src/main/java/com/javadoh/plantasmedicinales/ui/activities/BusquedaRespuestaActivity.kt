@@ -53,6 +53,8 @@ class BusquedaRespuestaActivity : AppCompatActivity() {
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         toolbar.setLogo(R.mipmap.ic_launcher)
         setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayUseLogoEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
 
         mRecyclerView = findViewById(R.id.recycler_view)
         if (!Constants.isAdsDisabled) {

@@ -67,6 +67,9 @@ class PostAsyncHttpTask(
             }
 
             val statusCode = urlConnection.responseCode
+            Log.d(TAG, "Request URL: $urlParam")
+            Log.d(TAG, "Response Code: $statusCode")
+
             if (statusCode == 200 || statusCode == 202) {
                 val reader = BufferedReader(InputStreamReader(urlConnection.inputStream))
                 val response = StringBuilder()
@@ -74,6 +77,8 @@ class PostAsyncHttpTask(
                 while (reader.readLine().also { line = it } != null) {
                     response.append(line)
                 }
+
+                Log.d(TAG, "Response Body: ${response.toString()}")
 
                 if ("GET_DATA_FACE_WITH_TOKEN".equals(flagCall, ignoreCase = true)) {
                     val parseResults = ParseResults(null, hierba, context)

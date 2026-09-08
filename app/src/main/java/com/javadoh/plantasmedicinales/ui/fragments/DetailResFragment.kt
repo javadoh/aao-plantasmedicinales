@@ -100,6 +100,7 @@ class DetailResFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
 
         accessToken = AccessToken.getCurrentAccessToken()
 
@@ -134,6 +135,8 @@ class DetailResFragment : Fragment() {
         toolbar = rootView.findViewById(R.id.toolbar)
         toolbar.setLogo(R.mipmap.ic_launcher)
         (activity as AppCompatActivity).setSupportActionBar(toolbar)
+        (activity as AppCompatActivity).supportActionBar?.setDisplayUseLogoEnabled(true)
+        (activity as AppCompatActivity).supportActionBar?.setDisplayShowHomeEnabled(true)
 
         scrollFragment = rootView.findViewById(R.id.scrollFragmentLayout)
         imageViewUrl = rootView.findViewById(R.id.img_hierba_card_res_ppal)
@@ -157,7 +160,18 @@ class DetailResFragment : Fragment() {
             hierba = args.getSerializable("HIERBAS_BEAN") as? HierbasBean
 
             hierba?.let { h ->
-                h.imgurl?.let { imageViewUrl.setImageURI(Uri.parse(it)) }
+                var imagePath = ""
+                h.imgurl?.let {
+                    imagePath = it.replace(Regex("\\.(png|jpg|jpeg)$"), "")
+                }
+                val uri = "@drawable/$imagePath"
+                val imageResource = mContext.resources.getIdentifier(uri, "drawable", mContext.packageName)
+                if (imageResource != 0) {
+                    Picasso.get().load(imageResource).into(imageViewUrl)
+                } else {
+                    Picasso.get().load(R.drawable.hierba_card_background).into(imageViewUrl)
+                }
+
                 textViewNombre.text = h.nombre
                 textViewNombreCientifico.text = "(${h.nombreCientifico})"
                 textViewAlias.text = Html.fromHtml("${getString(R.string.aliasFragTitle)}${h.alias?.toString()?.replace(Regex("[^A-Za-zÑñáéíóúÁÉÍÓÚ, ]"), "")}", Html.FROM_HTML_MODE_LEGACY)

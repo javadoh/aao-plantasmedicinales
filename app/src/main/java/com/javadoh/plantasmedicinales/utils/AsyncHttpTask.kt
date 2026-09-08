@@ -57,6 +57,8 @@ class AsyncHttpTask(
             urlConnection.setRequestProperty("charset", "utf-8")
 
             val statusCode = urlConnection.responseCode
+            Log.d(TAG, "Request URL: $urlParam")
+            Log.d(TAG, "Response Code: $statusCode")
 
             if (statusCode == 200) {
                 val reader = BufferedReader(InputStreamReader(urlConnection.inputStream))
@@ -65,6 +67,8 @@ class AsyncHttpTask(
                 while (reader.readLine().also { line = it } != null) {
                     response.append(line)
                 }
+
+                Log.d(TAG, "Response Body: ${response.toString()}")
 
                 val parseResults = ParseResults(hierbasList, null, context)
                 hierbasList = parseResults.parseResult(response.toString())

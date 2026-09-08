@@ -103,6 +103,8 @@ class BuscadorActivity : AppCompatActivity(), View.OnClickListener {
 
         setSupportActionBar(toolbar)
         supportActionBar?.setLogo(R.mipmap.ic_launcher)
+        supportActionBar?.setDisplayUseLogoEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
 
         val textTermsConditionsHome = findViewById<TextView>(R.id.textTermsConditionsHome)
         val textTermsConditionsClickable = findViewById<TextView>(R.id.textTermsConditionsClickable)
@@ -168,6 +170,47 @@ class BuscadorActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
+    fun newsDialog(v: View) {
+        val view = LayoutInflater.from(this).inflate(R.layout.dialog_news_updates, null)
+        AlertDialog.Builder(this)
+            .setView(view)
+            .setTitle(getString(R.string.dialogoNewsTitle))
+            .setPositiveButton(getString(R.string.btn_accept)) { dialog, _ -> dialog.cancel() }
+            .show()
+    }
+
+    private fun showStoreDialog() {
+        val vistaDialogo = LayoutInflater.from(this).inflate(R.layout.dialog_store_from_menu, null)
+        val alertDialog = AlertDialog.Builder(this).setView(vistaDialogo).create()
+
+        val txtTituloProducto = vistaDialogo.findViewById<TextView>(R.id.txtTituloProducto)
+        val btnPagar = vistaDialogo.findViewById<Button>(R.id.buttonPay)
+
+        txtTituloProducto.text = getString(R.string.subTituloPago)
+
+        if (Constants.isAdsDisabled) {
+            btnPagar.text = getString(R.string.compra_realizada_store)
+            btnPagar.isEnabled = false
+        } else {
+            btnPagar.setOnClickListener {
+                if (Constants.internetOn) {
+                    inAppPayApi.purchaseRemoveAds()
+                    alertDialog.dismiss()
+                } else {
+                    Toast.makeText(baseContext, getString(R.string.errorNoInternet), Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+
+        alertDialog.show()
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (!inAppPayApi.onActivityResult(requestCode, resultCode, data)) {
+            super.onActivityResult(requestCode, resultCode, data)
+        }
+    }
+
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_buscador, menu)
         return true
@@ -176,6 +219,7 @@ class BuscadorActivity : AppCompatActivity(), View.OnClickListener {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.action_enable_disable_sound -> player.stop()
+            R.id.action_store -> showStoreDialog()
             R.id.action_faq -> {
                 val view = LayoutInflater.from(this).inflate(R.layout.dialog_faq_from_menu, null)
                 AlertDialog.Builder(this).setView(view).setTitle("FAQ")

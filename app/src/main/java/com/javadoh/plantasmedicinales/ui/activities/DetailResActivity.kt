@@ -12,8 +12,10 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Button
 import android.widget.FrameLayout
 import android.widget.RelativeLayout
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -30,6 +32,7 @@ import com.javadoh.plantasmedicinales.R
 import com.javadoh.plantasmedicinales.io.Constants
 import com.javadoh.plantasmedicinales.io.beans.HierbasBean
 import com.javadoh.plantasmedicinales.ui.fragments.DetailResFragment
+import com.javadoh.plantasmedicinales.utils.GoogleInAppPayUtils
 import java.security.MessageDigest
 
 class DetailResActivity : AppCompatActivity() {
@@ -39,6 +42,7 @@ class DetailResActivity : AppCompatActivity() {
     private lateinit var hierba: HierbasBean
     private var mAdView: AdView? = null
     private var mInterstitialAd: InterstitialAd? = null
+    private lateinit var inAppPayApi: GoogleInAppPayUtils
 
     companion object {
         val TAG: String = DetailResActivity::class.java.name
@@ -65,6 +69,13 @@ class DetailResActivity : AppCompatActivity() {
 
         val hashKey = printKeyHash(this)
         Log.d(TAG, "KEYHASH: $hashKey")
+
+        inAppPayApi = GoogleInAppPayUtils(this)
+        try {
+            if (Constants.internetOn) inAppPayApi.onCreate()
+        } catch (e: Exception) {
+            Log.e(TAG, "Error initializing billing", e)
+        }
 
         AppEventsLogger.activateApp(application)
 
@@ -120,16 +131,25 @@ class DetailResActivity : AppCompatActivity() {
 
     override fun onPrepareOptionsMenu(menu: Menu): Boolean {
         menu.findItem(R.id.action_faq)?.isVisible = false
-        menu.findItem(R.id.action_store)?.isVisible = false
+        menu.findItem(R.id.action_store)?.isVisible = true
         menu.findItem(R.id.action_favoritos)?.isVisible = false
         menu.findItem(R.id.action_compartir)?.isVisible = true
         menu.findItem(R.id.action_enable_disable_sound)?.isVisible = false
-        menu.findItem(R.id.action_logout_facebook)?.isVisible = true
+        
+        val loginItem = menu.findItem(R.id.action_logout_facebook)
+        loginItem?.isVisible = true
+        if (AccessToken.getCurrentAccessToken() != null) {
+            loginItem?.title = getString(R.string.action_logout_facebook)
+        } else {
+            loginItem?.title = getString(R.string.action_login_facebook)
+        }
+        
         return super.onPrepareOptionsMenu(menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
+            R.id.action_store -> showStoreDialog()
             R.id.action_faq -> {
                 val vistaDialogoFaq = LayoutInflater.from(this).inflate(R.layout.dialog_faq_from_menu, null)
                 AlertDialog.Builder(this)
@@ -174,6 +194,43 @@ class DetailResActivity : AppCompatActivity() {
         if (!Constants.isAdsDisabled) {
             mInterstitialAd?.show(this)
         }
+    }
+
+    override fun onDestroy() {
+        inAppPayApi.onDestroy()
+        super.onDestroy()
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (!inAppPayApi.onActivityResult(requestCode, resultCode, data)) {
+            super.onActivityResult(requestCode, resultCode, data)
+        }
+    }
+
+    private fun showStoreDialog() {
+        val vistaDialogo = LayoutInflater.from(this).inflate(R.layout.dialog_store_from_menu, null)
+        val alertDialog = AlertDialog.Builder(this).setView(vistaDialogo).create()
+
+        val txtTituloProducto = vistaDialogo.findViewById<TextView>(R.id.txtTituloProducto)
+        val btnPagar = vistaDialogo.findViewById<Button>(R.id.buttonPay)
+
+        txtTituloProducto.text = getString(R.string.subTituloPago)
+
+        if (Constants.isAdsDisabled) {
+            btnPagar.text = getString(R.string.compra_realizada_store)
+            btnPagar.isEnabled = false
+        } else {
+            btnPagar.setOnClickListener {
+                if (Constants.internetOn) {
+                    inAppPayApi.purchaseRemoveAds()
+                    alertDialog.dismiss()
+                } else {
+                    Toast.makeText(baseContext, getString(R.string.errorNoInternet), Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+
+        alertDialog.show()
     }
 
     private fun requestNewInterstitial() {

@@ -49,6 +49,7 @@ class FacebookLoginComment : AppCompatActivity() {
 
             setContentView(R.layout.dialog_facebook_activity_login)
             loginButton = findViewById(R.id.login_button)
+            loginButton.permissions = listOf("public_profile", "email", "user_birthday", "user_gender", "user_location")
 
             loginButton.registerCallback(callbackManager, object : FacebookCallback<LoginResult> {
                 override fun onSuccess(result: LoginResult) { getFacebookData() }

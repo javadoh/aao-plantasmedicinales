@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.util.Log
 import androidx.appcompat.app.AlertDialog
+import com.javadoh.plantasmedicinales.R
 import com.javadoh.plantasmedicinales.io.Constants
 import com.javadoh.plantasmedicinales.utils.billing.IabHelper
 import com.javadoh.plantasmedicinales.utils.billing.IabResult
@@ -78,11 +79,22 @@ class GoogleInAppPayUtils(private val activity: Activity) {
     }
 
     fun purchaseRemoveAds() {
+        if (mHelper == null || !Constants.isInAppSetupCreated) {
+            complain("IAB helper is not set up correctly.")
+            alert(activity.getString(R.string.errorTienda))
+            return
+        }
+
         activity.runOnUiThread {
-            mHelper?.launchPurchaseFlow(
-                activity, SKU_REMOVE_ADS,
-                RC_REQUEST, mPurchaseFinishedListener, payload
-            )
+            try {
+                mHelper?.launchPurchaseFlow(
+                    activity, SKU_REMOVE_ADS,
+                    RC_REQUEST, mPurchaseFinishedListener, payload
+                )
+            } catch (e: Exception) {
+                Log.e(TAG, "Error launching purchase flow", e)
+                alert(activity.getString(R.string.errorTienda))
+            }
         }
     }
 

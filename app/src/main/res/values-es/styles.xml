@@ -1,0 +1,33 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+    <!-- Constantes Xml de estilos para la app -->
+    <item name="colorPrimary">@color/colorPrimary</item>
+    <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    <item name="colorAccent">@color/htmlLinks</item>
+    <item name="android:textColor">@color/colorPrimaryText</item>
+    <item name="android:textColorSecondary">@color/colorSecondaryText</item>
+    </style>
+    <style name="HomeCheckBox" parent="Theme.AppCompat.Light">
+        <item name="colorControlActivated">@color/checkedboxTermsHome</item>
+        <item name="colorControlNormal">@color/uncheckedboxTermsHome</item>
+    </style>
+    <style name="TextAppearence.App.TextInputLayout" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/colorSecondaryText</item>
+        <item name="android:textColorHint">@color/colorSecondaryText</item>
+        <item name="colorControlActivated">@color/colorSecondaryText</item>
+        <item name="colorControlHighlight">@color/colorSecondaryText</item>
+        <item name="colorControlNormal">@color/colorSecondaryText</item>
+    </style>
+    <color name="colorPrimary">#9CCC65</color>
+    <color name="colorPrimaryDark">#33691E</color>
+    <color name="colorPrimaryText">#000000</color>
+    <color name="colorSecondaryText">#FFFFFF</color>
+    <color name="htmlLinks">#14cae4</color>
+    <color name="checkedboxTermsHome">#14cae4</color>
+    <color name="uncheckedboxTermsHome">#b3b3b3</color>
+    <color name="termsandconditionstext">#eeeeee</color>
+    <color name="textError">#f00000</color>
+</resources>

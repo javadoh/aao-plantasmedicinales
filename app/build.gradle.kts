@@ -6,6 +6,10 @@ android {
     namespace = "com.javadoh.plantasmedicinales"
     compileSdk = 35
 
+    aaptOptions {
+        ignoreAssetsPattern = "!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!Thumbs.db:!picasa.ini:!*~"
+    }
+
     buildFeatures {
         aidl = true
     }
@@ -21,6 +25,12 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    packaging {
+        jniLibs {
+            useLegacyPackaging = true
+        }
     }
 }
 

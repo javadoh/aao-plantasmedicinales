@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Plantas Medicinales Naturales</string>
+    <string name="action_settings">Configuración</string>
+
+    <!-- TITLES -->
+    <string name="titleTerms">TÉRMINOS Y CONDICIONES</string>
+    <string name="titleComments">COMENTARIOS</string>
+    <string name="detailPlant">DETALLE DE </string>
+    <string name="dialogoNewsTitle">NOVEDADES</string>
+    <string name="menuSoundTitle">ACTIVAR/DESACTIVAR SONIDO</string>
+
+    <!-- MENU TITLES -->
+    <string name="menuStoreTitle">Tienda</string>
+    <string name="menuFaqTitle">FAQ</string>
+    <string name="menuFavTitle">Favoritos</string>
+    <string name="menuShareTitle">Compartir</string>
+    <string name="menuLogInOutTitle">Log In/Out</string>
+
+    <!-- SUBTITLES -->
+    <string name="aliasFragTitle"><![CDATA[<b>ALIAS: </b>]]></string>
+    <string name="descFragTitle"><![CDATA[<b>DESCRIPCIÓN: </b>]]></string>
+    <string name="sectionFragTitle"><![CDATA[<b>SECCIÓN: </b>]]></string>
+    <string name="propertiesFragTitle"><![CDATA[<b>PROPIEDADES: </b>]]></string>
+    <string name="indicationsFragTitle"><![CDATA[<b>INDICACIONES: </b>]]></string>
+    <string name="contraIndicationsFragTitle"><![CDATA[<b>CONTRAINDICACIONES: </b>]]></string>
+    <string name="useFragTitle"><![CDATA[<b>USO: </b>]]></string>
+    <string name="symptomsFragTitle"><![CDATA[<b>SÍNTOMAS: </b>]]></string>
+    <string name="locationFragTitle"><![CDATA[<b>UBICACIÓN: </b>]]></string>
+    <string name="gastronomyFragTitle"><![CDATA[<b>GASTRONOMÍA: </b>]]></string>
+    <string name="commentUsuario"><![CDATA[<b>Usuario: </b>]]></string>
+    <string name="commentEmail"><![CDATA[<b>Email: </b>]]></string>
+    <string name="commentText"><![CDATA[<b>Comentario: </b>]]></string>
+
+    <!-- HINTS -->
+    <string name="hintSearch">Ingrese su búsqueda...</string>
+    <string name="hintCommentName">Ingrese su nombre y apellido</string>
+    <string name="hintCommentEmail">Ingrese su email</string>
+    <string name="hintCommentText">Ingrese su comentario</string>
+
+    <!-- BUTTONS -->
+    <string name="btn_text_busqueda_1">Buscar Hierbas</string>
+    <string name="btn_text_busqueda_2">Buscar síntoma</string>
+    <string name="btn_enviar">ENVIAR</string>
+    <string name="btn_cancelar">CANCELAR</string>
+    <string name="busqueda_hierba">PLANTA</string>
+    <string name="busqueda_sintoma">SÍNTOMA</string>
+    <string name="btn_face_continue">CONTINUAR</string>
+    <string name="btn_accept">ACEPTAR</string>
+    <string name="btn_later">MÁS TARDE</string>
+
+    <!-- DIALOGOS -->
+    <string name="titulo_dialogo_comentario">AÑADIR UN COMENTARIO</string>
+    <string name="titulo_dialogo_imagen_gde">DETALLE DE</string>
+    <string name="error_nombre_dialogo">debe ingresar un comentario.</string>
+    <string name="error_email_dialogo">Debe ingresar un email válido.</string>
+    <string name="error_comentarios_dialogo">No se permiten palabras reservadas ni caracteres especiales en los comentarios.</string>
+
+    <!-- DIALOGO TIENDA -->
+    <string name="compra_realizada_store">Ya compró nuestro producto para desactivar publicidad. ¡Gracias!</string>
+    <string name="subTituloPago">PAGO ÚNICO PARA DESACTIVAR PERMANENTEMENTE LA PUBLICIDAD</string>
+    <string name="btnpagar">PAGAR</string>
+
+    <!-- CHECKBOX -->
+    <string name="terminos_pantalla_inicio">Acepto y he leído los</string>
+    <string name="terminos_clickable_inicio"><![CDATA[<u>términos y condiciones.</u>]]></string>
+
+    <!-- ERRORES -->
+    <string name="errorHomeCheck">¡Hola!, debe aceptar los términos y condiciones antes de continuar con la búsqueda...</string>
+    <string name="errorSinResultados">NO HAY RESULTADOS</string>
+    <string name="errorSinConexion">NO FUE POSIBLE CONECTAR AL SERVIDOR, POR FAVOR INTENTE MÁS TARDE.</string>
+    <string name="errorGral">Hubo un error: </string>
+    <string name="errorGral2">¡Lo sentimos!, hubo un error.</string>
+    <string name="errorTienda">No se pudo llamar a los servicios de pago de Google. Sugerimos revisar su instalación de la tienda, configuración de su computadora y cuenta de Gmail.</string>
+    <string name="errorCommentForm">Debe ingresar los datos correctamente en el formulario.</string>
+    <string name="errorImagesAdapter">Hubo un problema con la imagen. ¡Lo sentimos!</string>
+    <string name="errorInAppPayCreated">No pudimos conectar con los servicios de pago de Google... Por favor intente más tarde y asegúrese de tener acceso a internet.</string>
+    <string name="errorNoInternet">No hay conexión a internet, no podemos continuar sin ella.</string>
+    <string name="errorCannotRate">Hubo un error al lanzar la calificación de Google Play. Inténtelo más tarde.</string>
+    <string name="errorInputSearchChars">Por favor, no ingrese caracteres especiales ni números.</string>
+    <string name="errorSharePlant">Lo sentimos, hubo un error, no podemos compartir la información de la planta.</string>
+
+    <!-- LOCALIZATION -->
+    <string name="flagLocalization">ES</string>
+
+    <!-- RATE -->
+    <string name="rate_title">CALIFICA ESTA APP</string>
+    <string name="rate_message">Si disfruta de esta aplicación, tómese un minuto para calificarla, esto nos ayudará a mejorarla. ¡Gracias por su apoyo!</string>
+    <string name="rate_positive">Calificar ahora</string>
+    <string name="rate_remind_later">Recordarme</string>
+    <string name="rate_never">No, gracias</string>
+
+    <!-- FACEBOOK -->
+    <string name="facebook_app_id">154138268330644</string>
+    <string name="facebook_login_protocol_scheme">fb154138268330644</string>
+    <string name="facebook_client_token">5e2d2a3e46d42c571fa93467b185e74e</string>
+    <string name="btnfacebookasociar">CONTINUAR CON FACEBOOK</string>
+    <string name="action_login_facebook">Iniciar sesión</string>
+    <string name="action_logout_facebook">Cerrar sesión</string>
+    <string name="facebookCommentSucceed">El comentario fue ingresado correctamente, debe ser aprobado por un administrador en las próximas horas.</string>
+    <string name="facebookDataRecovered">Hemos recuperado los datos de facebook sin necesidad de iniciar sesión de nuevo ... Por favor abra los comentarios de nuevo.</string>
+    <string name="facebookRecoverDataSingle">Recuperando datos...</string>
+
+    <!-- ADMOB -->
+    <string name="ad_app_id">ca-app-pub-9433945240629594~8415936266</string>
+    <string name="adbanner">ca-app-pub-9433945240629594/3148131860</string>
+    <string name="adintersticial">ca-app-pub-9433945240629594/6101598269</string>
+
+</resources>

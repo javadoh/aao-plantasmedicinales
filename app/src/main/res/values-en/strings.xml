@@ -3,42 +3,37 @@
     <string name="app_name">Natural Medicinal Plants</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Configuration</string>
-
     <!-- TITLES -->
     <string name="titleTerms">TERMS AND CONDITIONS</string>
     <string name="titleComments">COMENTARIOS</string>
     <string name="detailPlant">DETAIL OF </string>
     <string name="dialogoNewsTitle">NEWS</string>
     <string name="menuSoundTitle">ENABLE/DISABLE SOUND</string>
-
-    <!-- MENU TITLES -->
+    <!--MENU TITLES-->
     <string name="menuStoreTitle">Store</string>
     <string name="menuFaqTitle">FAQ</string>
     <string name="menuFavTitle">Favorites</string>
     <string name="menuShareTitle">Share</string>
     <string name="menuLogInOutTitle">Log In/Out</string>
-
     <!-- SUBTITLES -->
-    <string name="aliasFragTitle"><![CDATA[<b>ALIAS: </b>]]></string>
-    <string name="descFragTitle"><![CDATA[<b>DESCRIPTION: </b>]]></string>
-    <string name="sectionFragTitle"><![CDATA[<b>SECTION: </b>]]></string>
-    <string name="propertiesFragTitle"><![CDATA[<b>PROPERTIES: </b>]]></string>
-    <string name="indicationsFragTitle"><![CDATA[<b>INDICATIONS: </b>]]></string>
-    <string name="contraIndicationsFragTitle"><![CDATA[<b>CONTRAINDICATIONS: </b>]]></string>
-    <string name="useFragTitle"><![CDATA[<b>USE: </b>]]></string>
-    <string name="symptomsFragTitle"><![CDATA[<b>SYMPTOMS: </b>]]></string>
-    <string name="locationFragTitle"><![CDATA[<b>LOCATION: </b>]]></string>
-    <string name="gastronomyFragTitle"><![CDATA[<b>GASTRONOMY: </b>]]></string>
-    <string name="commentUsuario"><![CDATA[<b>User: </b>]]></string>
-    <string name="commentEmail"><![CDATA[<b>Email: </b>]]></string>
-    <string name="commentText"><![CDATA[<b>Comment: </b>]]></string>
-
-    <!-- HINTS -->
+    <string name="aliasFragTitle"><b>ALIAS: </b></string>
+    <string name="descFragTitle"><b>DESCRIPTION: </b></string>
+    <string name="sectionFragTitle"><b>SECTION: </b></string>
+    <string name="propertiesFragTitle"><b>PROPERTIES: </b></string>
+    <string name="indicationsFragTitle"><b>INDICATIONS: </b></string>
+    <string name="contraIndicationsFragTitle"><b>CONTRAINDICATIONS: </b></string>
+    <string name="useFragTitle"><b>USE: </b></string>
+    <string name="symptomsFragTitle"><b>SYMPTOMS: </b></string>
+    <string name="locationFragTitle"><b>LOCATION: </b></string>
+    <string name="gastronomyFragTitle"><b>GASTRONOMY: </b></string>
+    <string name="commentUsuario"><b>User: </b></string>
+    <string name="commentEmail"><b>Email: </b></string>
+    <string name="commentText"><b>Comment: </b></string>
+    <!--HINTS-->
     <string name="hintSearch">Enter your search...</string>
     <string name="hintCommentName">Enter your name and lastname</string>
     <string name="hintCommentEmail">Enter your email</string>
     <string name="hintCommentText">Enter your comment</string>
-
     <!-- BUTTONS -->
     <string name="btn_text_busqueda_1">Search Herbs</string>
     <string name="btn_text_busqueda_2">Search symptom</string>
@@ -49,26 +44,22 @@
     <string name="btn_face_continue">CONTINUE</string>
     <string name="btn_accept">ACCEPT</string>
     <string name="btn_later">LATER</string>
-
     <!-- DIALOGOS -->
     <string name="titulo_dialogo_comentario">ADD A COMMENT</string>
     <string name="titulo_dialogo_imagen_gde">DETAIL OF</string>
     <string name="error_nombre_dialogo">you must enter a comment.</string>
     <string name="error_email_dialogo">You must enter a valid email.</string>
     <string name="error_comentarios_dialogo">Reserved words and the special characters are not allowed in comments.</string>
-
-    <!-- DIALOGO TIENDA -->
+    <!--## DIALOGO TIENDA -->
     <string name="compra_realizada_store">You already bought our disable pub product. ¡Thank you!</string>
     <string name="montoPagoPremium">0.99</string>
     <string name="monedaPago">US$</string>
     <string name="subTituloPago">SINGLE PAYMENT FOR PERMANENTLY DISABLE THE ADVERTISING</string>
     <string name="btnpagar">CHECKOUT</string>
-
     <!-- CHECKBOX -->
     <string name="terminos_pantalla_inicio">I agree and i have read the</string>
-    <string name="terminos_clickable_inicio"><![CDATA[<u>terms and conditions.</u>]]></string>
-
-    <!-- ERRORES -->
+    <string name="terminos_clickable_inicio"><u>terms and conditions.</u></string>
+    <!--ERRORES-->
     <string name="errorHomeCheck">¡Hi!, you must accept the terms and conditions before continue with the search...</string>
     <string name="errorSinResultados">THERE IS NO RESULTS</string>
     <string name="errorSinConexion">IT WAS NOT POSSIBLE TO CONNECT TO SERVER, PLEASE TRY BACK AGAIN LATER.</string>
@@ -82,17 +73,14 @@
     <string name="errorCannotRate">There was an error launching google play rate, we are sorry!. Please try it later.</string>
     <string name="errorInputSearchChars">Please, do not enter any special characters or numbers.</string>
     <string name="errorSharePlant">We are sorry, there was an error, we cannot share the plant information with the social media.</string>
-
-    <!-- TERMINOS Y CONDICIONES -->
+    <!--TERMINOS Y CONDICIONES-->
     <string name="terminos_condiciones_text">The client undertakes to use the services of a diligent, correct and licit and, in particular, for information only and is not limited to, undertakes to refrain from: use the information contained in this application without the willingness to assume the risk that this may entail. It is the duty of the user to deepen the information given in this application. The use of natural medicinal plants or for purposes contrary to the law, morality and generally accepted principles of morality or public order; reproduce or copy, distribute, allow the public access through any form of public communication, transform or modify the Services, unless you have obtained the permission of the copyright holder or it is legally permitted; perform any act that could be considered an infringement of any intellectual or industrial property rights belonging to JAVADOH S.A or to third parties; employ the services and in particular the information of any kind obtained through the application to send publicity, communications for direct marketing purposes or With any other class of business purpose, unsolicited messages directed to a plurality of people regardless of its purpose, as well as to sell or disclose this information in any way; the client will be responsible for damages of any nature that JAVADOH S.A may suffer, with occasion or as a consequence of breach of any of the obligations outlined above as well as any other included in the present General Conditions and/or those imposed by law in connection with the use of the application. JAVADOH S.A shall at all times respect for the legal system in force, and shall be entitled to interrupt, at its sole discretion, the service or exclude the client of the Web Site in the event of alleged commission, complete or incomplete, of any of the crimes or offenses covered by the Penal Code in force or in case you notice any behavior which in the view of JAVADOH S.A are contrary to these General Conditions, the General Contracting Conditions that operate for this Web Site, the law, the rules established by JAVADOH S.A or their collaborators or likely to disrupt the proper functioning, image, credibility and/or prestige of JAVADOH S.A or its partners.</string>
-
-    <!-- FAQ -->
+    <!--FAQ-->
     <string name="textoBusquedaFaq">To search enter the name, alias or scientific name with which you know the plant/grass/tree/fruit; you can also search for a name of symptom/disease/Condition/area. If you do not get results, try synonyms, accents or words shortened.</string>
     <string name="textoInformacion">To refine your search will display a collection of plants with a descriptive image of the same name and the alias; when you click on the name or alias will show a detail of the plant that provides information on its description, used parts, indications, forms of use or employment, contraindications, symptoms associated with their use, origin, location, gastronomic uses, among others, in addition to remarks that share the experiences of the users for the users.</string>
     <string name="textoReferencias">Natural medicinal plants has chiefly relied on <b>Wikipedia</b> in the construction of its information, as well as some other educational and informational texts in the area of natural medicine. The images are mainly based on the natural view, that is to say that they be recognized in their natural habitat.</string>
     <string name="textoFacebookCommentsFaq">The application has the functionality to send comments both integrated with facebook, as also for those users who do not have profile on the social network, entering your name, e-mail and comment respectively. This function can be found in the detail of each plant, tree or fruit, both by clicking on the button Add comments, as on the menu at the top of which you will be able to log on or log out of facebook when you want.</string>
-
-    <!-- FACEBOOK -->
+    <!--FACEBOOK-->
     <string name="facebook_app_id">154138268330644</string>
     <string name="facebook_login_protocol_scheme">fb154138268330644</string>
     <string name="facebook_client_token">5e2d2a3e46d42c571fa93467b185e74e</string>
@@ -102,53 +90,43 @@
     <string name="facebookCommentSucceed">Commentary was entered successfully, it must be approved by a Manager in the next hours.</string>
     <string name="facebookDataRecovered">We have recovered the data from facebook without sign you again ... Please reopens the comments.</string>
     <string name="facebookRecoverDataSingle">Recovering data...</string>
-
-    <!-- DATA API -->
+    <!--DATA API-->
     <string name="noCity">-</string>
     <string name="noCountry">International</string>
     <string name="noUserName">sinnombre</string>
     <string name="noBirthday">No birthday date</string>
     <string name="noGender">Undefined</string>
     <string name="noEmail">sincorreo</string>
-
     <!-- FACEBOOK ERRORS -->
     <string name="facebookGralError">An error occurred while retrieving data from facebook . We apologize , we will verify what happened.</string>
     <string name="facebookCommentError">An error occurred while sending comment . We apologize , we will verify what happened.</string>
     <string name="facebookCancelSession">It was canceled facebook login.</string>
     <string name="facebookErrorSession">Sorry, an error has occurred at log on facebook.</string>
     <!-- ADMOB -->
-    <!--<string name="ad_app_id">ca-app-pub-3940256099942544~3347511713</string>-->
     <string name="ad_app_id">ca-app-pub-9433945240629594~8415936266</string>
-
     <string name="adbanner">ca-app-pub-9433945240629594/3148131860</string>
     <string name="adintersticial">ca-app-pub-9433945240629594/6101598269</string>
-
-    <!-- PAYPAL -->
+    <!-- PAYPAL PARA COMPRADORES INTERNOS QUITAR PUBLICIDAD -->
     <string name="idpaypalkey">Abfterl8vA6SK_wCFgvT0C8u6-c9XWqf4suVA8kN0LUckzDsxZylWYGcs0W5nkBfKG3CFWvIx86vqVSr</string>
-
     <!-- UPDATES -->
     <string name="incomingFav">As soon as possible, we will implement the option to add favorites...</string>
     <string name="incomingShare">As soon as possible, we will implement the option to share information on the social networks...</string>
-
     <!-- LOCALIZATION -->
     <string name="flagLocalization">EN</string>
-
     <!-- RATE -->
     <string name="rate_title">RATE THIS APP</string>
     <string name="rate_message">If you enjoy this app, please take a minute to rate this app, this will help us to make it better. Thank you for your support!</string>
     <string name="rate_positive">Rate now</string>
     <string name="rate_remind_later">Remind me</string>
     <string name="rate_never">No, ty</string>
-
     <!-- UPDATE NEWS -->
     <string name="proxUpdateNews2">In our next updates we will include new plants, fruit trees, as well as new modules, sections and features of interest to users, including any necessary improvements in the application; all of the above, the hand with the growth of the application users and requirements.</string>
-    <string name="proxUpdateNews">"07/11/2019 \n \n -New Plants: Valerian, Radish, Tobacco. \n \n - Detail window Improvements. \n \n - New presentation "</string>
-
+    <string name="proxUpdateNews">"07/11/2019 \n \n <b> -New Plants: </b> Valerian, Radish, Tobacco. \n \n -<b> Detail window Improvements.</b> \n \n - <b>New presentation </b>"</string>
     <!-- SHARE WASSAP -->
     <string name="tituloSharePlantSubject">", i think is so useful for you!, search it by its name. You must install the application. Cheers."</string>
     <string name="tituloSharePlant">"¡Hi! I want to share with you this information about the "</string>
-    <string name="tituloSharePlant2">" plant, download and seek it from this application: https://play.google.com/store/apps/details?id=com.javadoh.plantasmedicinalesnaturales"</string>
-
+    <string name="tituloSharePlant2">" plant, download and seek it from this application:
+ https://play.google.com/store/apps/details?id=com.javadoh.plantasmedicinalesnaturales"</string>
     <string name="termscheckselection">Selección de acepta términos y condiciones para el uso de la aplicación</string>
     <string name="bannerpubend">Banner de publicidad inferior</string>
     <string name="newsapp">Noticias y novedades de la aplicación</string>

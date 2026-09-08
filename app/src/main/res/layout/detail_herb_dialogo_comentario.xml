@@ -47,25 +47,25 @@
         android:layout_marginBottom="30dp"
         />-->
 
-    <android.support.design.widget.TextInputLayout
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/layoutNombreUsuario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    <EditText
+    <com.google.android.material.textfield.TextInputEditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/hintCommentName"
         android:id="@+id/nombreUsuario"
         android:textColor="#293082"
         android:textColorHint="#6f7072" />
-    </android.support.design.widget.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <android.support.design.widget.TextInputLayout
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/layoutEmailUsuario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-    <EditText
+    <com.google.android.material.textfield.TextInputEditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
@@ -73,13 +73,13 @@
         android:hint="@string/hintCommentEmail"
         android:textColor="#293082"
         android:textColorHint="#6f7072" />
-    </android.support.design.widget.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <android.support.design.widget.TextInputLayout
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/layoutComentario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-    <EditText
+    <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/comentario"
         android:layout_width="match_parent"
         android:layout_height="150dp"
@@ -89,7 +89,7 @@
         android:textColor="#293082"
         android:textColorHint="#6f7072"
         />
-    </android.support.design.widget.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
