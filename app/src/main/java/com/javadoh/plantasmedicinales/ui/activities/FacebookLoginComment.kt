@@ -98,8 +98,8 @@ class FacebookLoginComment : AppCompatActivity() {
         currentProfile?.let {
             Log.d(TAG, "User Data: ${userFbData.contentToString()}")
             Log.d(TAG, "Name and Image: ${it.firstName}, ${it.getProfilePictureUri(100, 100)}")
-            MemoryBeanAux.setUserFbData(userFbData)
-            MemoryBeanAux.setUserFbUlrImage(it.getProfilePictureUri(100, 100).toString())
+            MemoryBeanAux.userFbData = userFbData as Array<String>?;
+            MemoryBeanAux.userFbUlrImage = it.getProfilePictureUri(100, 100).toString();
             finish()
         }
     }

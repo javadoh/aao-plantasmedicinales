@@ -1,15 +1,20 @@
 package com.javadoh.plantasmedicinales.utils.billing
 
+import org.json.JSONException
 import org.json.JSONObject
 
-data class Purchase(val itemType: String, val originalJson: String, val signature: String) {
-    val orderId: String
-    val packageName: String
-    val sku: String
-    val purchaseTime: Long
-    val purchaseState: Int
-    val developerPayload: String
-    val token: String
+class Purchase(
+    val itemType: String,
+    val originalJson: String,
+    val signature: String
+) {
+    var orderId: String? = null
+    var packageName: String? = null
+    var sku: String = ""
+    var purchaseTime: Long = 0
+    var purchaseState: Int = 0
+    var developerPayload: String? = null
+    var token: String = ""
 
     init {
         val o = JSONObject(originalJson)

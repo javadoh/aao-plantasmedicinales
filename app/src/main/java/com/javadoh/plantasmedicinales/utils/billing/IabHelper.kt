@@ -1,6 +1,7 @@
 package com.javadoh.plantasmedicinales.utils.billing
 
 import android.app.Activity
+import android.app.PendingIntent
 import android.content.ComponentName
 import android.content.Context
 import android.content.Intent

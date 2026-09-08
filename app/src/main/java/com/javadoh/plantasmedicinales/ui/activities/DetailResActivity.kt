@@ -47,7 +47,7 @@ class DetailResActivity : AppCompatActivity() {
             var key: String? = null
             try {
                 val info = context.packageManager.getPackageInfo(context.packageName, PackageManager.GET_SIGNATURES)
-                for (signature in info.signatures) {
+                info?.signatures?.forEach { signature ->
                     val md = MessageDigest.getInstance("SHA")
                     md.update(signature.toByteArray())
                     key = Base64.encodeToString(md.digest(), Base64.DEFAULT)

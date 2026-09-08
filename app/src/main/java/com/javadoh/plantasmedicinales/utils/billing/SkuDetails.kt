@@ -2,14 +2,12 @@ package com.javadoh.plantasmedicinales.utils.billing
 
 import org.json.JSONObject
 
-data class SkuDetails(val itemType: String, val json: String) {
+class SkuDetails(val itemType: String, val json: String) {
     val sku: String
     val type: String
     val price: String
     val title: String
     val description: String
-
-    constructor(jsonSkuDetails: String) : this(IabHelper.ITEM_TYPE_INAPP, jsonSkuDetails)
 
     init {
         val o = JSONObject(json)

@@ -6,6 +6,8 @@ import android.util.Log
 import androidx.appcompat.app.AlertDialog
 import com.javadoh.plantasmedicinales.io.Constants
 import com.javadoh.plantasmedicinales.utils.billing.IabHelper
+import com.javadoh.plantasmedicinales.utils.billing.IabResult
+import com.javadoh.plantasmedicinales.utils.billing.Inventory
 import com.javadoh.plantasmedicinales.utils.billing.Purchase
 
 class GoogleInAppPayUtils(private val activity: Activity) {
@@ -27,46 +29,52 @@ class GoogleInAppPayUtils(private val activity: Activity) {
         mHelper?.enableDebugLogging(true)
 
         Log.d(TAG, "Starting setup.")
-        mHelper?.startSetup { result ->
-            Log.d(TAG, "Setup finished.")
+        mHelper?.startSetup(object : IabHelper.OnIabSetupFinishedListener {
+            override fun onIabSetupFinished(result: IabResult) {
+                Log.d(TAG, "Setup finished.")
 
-            if (!result.isSuccess) {
-                complain("Problem setting up in-app billing: $result")
-                Constants.isInAppSetupCreated = false
-                return@startSetup
+                if (!result.isSuccess) {
+                    complain("Problem setting up in-app billing: $result")
+                    Constants.isInAppSetupCreated = false
+                    return
+                }
+
+                if (mHelper == null) {
+                    Constants.isInAppSetupCreated = false
+                    return
+                }
+
+                Constants.isInAppSetupCreated = true
+                Log.d(TAG, "Setup successful. Querying inventory.")
+
+                // Passed the explicit parameters required by the Kotlin IabHelper
+                mHelper?.queryInventoryAsync(true, null, mGotInventoryListener)
             }
-
-            if (mHelper == null) {
-                Constants.isInAppSetupCreated = false
-                return@startSetup
-            }
-
-            Constants.isInAppSetupCreated = true
-            Log.d(TAG, "Setup successful. Querying inventory.")
-            mHelper?.queryInventoryAsync(mGotInventoryListener)
-        }
+        })
     }
 
-    private val mGotInventoryListener = IabHelper.QueryInventoryFinishedListener { result, inventory ->
-        Log.d(TAG, "Query inventory finished.")
+    private val mGotInventoryListener = object : IabHelper.QueryInventoryFinishedListener {
+        override fun onQueryInventoryFinished(result: IabResult, inventory: Inventory?) {
+            Log.d(TAG, "Query inventory finished.")
 
-        if (mHelper == null) return@QueryInventoryFinishedListener
+            if (mHelper == null) return
 
-        if (result.isFailure) {
-            complain("Failed to query inventory: $result")
-            return@QueryInventoryFinishedListener
+            if (result.isFailure || inventory == null) {
+                complain("Failed to query inventory: $result")
+                return
+            }
+
+            Log.d(TAG, "Query inventory was successful.")
+
+            val removeAdsPurchase = inventory.getPurchase(SKU_REMOVE_ADS)
+            Constants.isAdsDisabled = removeAdsPurchase != null && verifyDeveloperPayload(removeAdsPurchase)
+            if (Constants.isAdsDisabled) {
+                removeAds()
+            }
+
+            Log.d(TAG, "User has ${if (Constants.isAdsDisabled) "REMOVED ADS" else "NOT REMOVED ADS"}")
+            Log.d(TAG, "Initial inventory query finished; enabling main UI.")
         }
-
-        Log.d(TAG, "Query inventory was successful.")
-
-        val removeAdsPurchase = inventory.getPurchase(SKU_REMOVE_ADS)
-        Constants.isAdsDisabled = removeAdsPurchase != null && verifyDeveloperPayload(removeAdsPurchase)
-        if (Constants.isAdsDisabled) {
-            removeAds()
-        }
-
-        Log.d(TAG, "User has ${if (Constants.isAdsDisabled) "REMOVED ADS" else "NOT REMOVED ADS"}")
-        Log.d(TAG, "Initial inventory query finished; enabling main UI.")
     }
 
     fun purchaseRemoveAds() {
@@ -95,24 +103,26 @@ class GoogleInAppPayUtils(private val activity: Activity) {
         return true
     }
 
-    private val mPurchaseFinishedListener = IabHelper.OnIabPurchaseFinishedListener { result, purchase ->
-        Log.d(TAG, "Purchase finished: $result, purchase: $purchase")
+    private val mPurchaseFinishedListener = object : IabHelper.OnIabPurchaseFinishedListener {
+        override fun onIabPurchaseFinished(result: IabResult, purchase: Purchase?) {
+            Log.d(TAG, "Purchase finished: $result, purchase: $purchase")
 
-        if (mHelper == null) return@OnIabPurchaseFinishedListener
+            if (mHelper == null) return
 
-        if (result.isFailure) {
-            complain("Error purchasing: $result")
-            return@OnIabPurchaseFinishedListener
-        }
-        if (!verifyDeveloperPayload(purchase)) {
-            complain("Error purchasing. Authenticity verification failed.")
-            return@OnIabPurchaseFinishedListener
-        }
+            if (result.isFailure || purchase == null) {
+                complain("Error purchasing: $result")
+                return
+            }
+            if (!verifyDeveloperPayload(purchase)) {
+                complain("Error purchasing. Authenticity verification failed.")
+                return
+            }
 
-        Log.d(TAG, "Purchase successful.")
+            Log.d(TAG, "Purchase successful.")
 
-        if (purchase.sku == SKU_REMOVE_ADS) {
-            removeAds()
+            if (purchase.sku == SKU_REMOVE_ADS) {
+                removeAds()
+            }
         }
     }
 

@@ -1,10 +1,5 @@
 package com.javadoh.plantasmedicinales.ui.activities
 
-BuscadorActivity.kt
-
-Kotlin
-package com.javadoh.plantasmedicinalesnaturales.ui.activities
-
 import android.Manifest
 import android.app.Activity
 import android.content.Context
@@ -36,9 +31,9 @@ import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.google.android.material.textfield.TextInputLayout
-import com.javadoh.plantasmedicinalesnaturales.R
-import com.javadoh.plantasmedicinalesnaturales.io.Constants
-import com.javadoh.plantasmedicinalesnaturales.utils.GoogleInAppPayUtils
+import com.javadoh.plantasmedicinales.R
+import com.javadoh.plantasmedicinales.io.Constants
+import com.javadoh.plantasmedicinales.utils.GoogleInAppPayUtils
 import java.io.IOException
 import java.util.regex.Pattern
 

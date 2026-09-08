@@ -1,30 +1,38 @@
 package com.javadoh.plantasmedicinales.utils.billing
 
-class Inventory {
-    private val skuMap = mutableMapOf<String, SkuDetails>()
-    private val purchaseMap = mutableMapOf<String, Purchase>()
+import java.util.HashMap
 
-    fun getSkuDetails(sku: String): SkuDetails? = skuMap[sku]
-    fun getPurchase(sku: String): Purchase? = purchaseMap[sku]
-    fun hasPurchase(sku: String): Boolean = purchaseMap.containsKey(sku)
-    fun hasDetails(sku: String): Boolean = skuMap.containsKey(sku)
+class Inventory {
+    private val mSkuMap = HashMap<String, SkuDetails>()
+    private val mPurchaseMap = HashMap<String, Purchase>()
+
+    fun getSkuDetails(sku: String): SkuDetails? = mSkuMap[sku]
+
+    fun getPurchase(sku: String): Purchase? = mPurchaseMap[sku]
+
+    fun hasPurchase(sku: String): Boolean = mPurchaseMap.containsKey(sku)
+
+    fun hasDetails(sku: String): Boolean = mSkuMap.containsKey(sku)
 
     fun erasePurchase(sku: String) {
-        purchaseMap.remove(sku)
+        mPurchaseMap.remove(sku)
     }
 
-    val allOwnedSkus: List<String> get() = purchaseMap.keys.toList()
-    val allPurchases: List<Purchase> get() = purchaseMap.values.toList()
-
     fun getAllOwnedSkus(itemType: String): List<String> {
-        return purchaseMap.values.filter { it.itemType == itemType }.map { it.sku }
+        val result = ArrayList<String>()
+        for (p in mPurchaseMap.values) {
+            if (p.itemType == itemType) {
+                result.add(p.sku)
+            }
+        }
+        return result
     }
 
     fun addSkuDetails(d: SkuDetails) {
-        skuMap[d.sku] = d
+        mSkuMap[d.sku] = d
     }
 
     fun addPurchase(p: Purchase) {
-        purchaseMap[p.sku] = p
+        mPurchaseMap[p.sku] = p
     }
 }

@@ -51,7 +51,7 @@ class ParseResults(
                 userFbData[4] = context.getString(R.string.noCity)
                 userFbData[5] = context.getString(R.string.noCountry)
             }
-            MemoryBeanAux.setUserFbData(userFbData)
+            MemoryBeanAux.userFbData = userFbData as Array<String>?;
         } catch (e: Exception) {
             Log.d(TAG, context.getString(R.string.errorGral), e)
         }

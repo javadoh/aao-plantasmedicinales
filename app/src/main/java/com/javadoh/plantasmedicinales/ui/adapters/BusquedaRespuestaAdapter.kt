@@ -44,7 +44,7 @@ class BusquedaRespuestaAdapter(
             imagePath = it.replace(Regex("\\.(png|jpg|jpeg)$"), "")
         }
 
-        MemoryBeanAux.setHierbaImagePath(imagePath)
+        MemoryBeanAux.hierbaImagePath = imagePath;
         var uri = "@drawable/$imagePath"
         var imageResource = mContext.resources.getIdentifier(uri, "drawable", mContext.packageName)
 
@@ -71,7 +71,7 @@ class BusquedaRespuestaAdapter(
         }
 
         override fun onClick(v: View) {
-            val position = bindingAdapterPosition
+            val position = adapterPosition
             if (position == RecyclerView.NO_POSITION) return
 
             try {

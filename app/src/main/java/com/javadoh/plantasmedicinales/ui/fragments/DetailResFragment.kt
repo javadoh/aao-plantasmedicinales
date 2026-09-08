@@ -326,14 +326,14 @@ class DetailResFragment : Fragment() {
                     btnTomarDatosFacecbook.background = ContextCompat.getDrawable(context, R.drawable.btn_grey_face)
                 }
 
-                if (MemoryBeanAux.getUserFbData() == null && accessToken != null) {
+                if (MemoryBeanAux.userFbData == null && accessToken != null) {
                     val graphUrl = "${Constants.URL_GRAPH_FACEBOOK_ME_DATA}${accessToken?.token}"
                     val progressBar = ProgressBar(context)
                     val jsonObject = JSONObject()
                     PostAsyncHttpTask(context, progressBar, "GET_DATA_FACE_WITH_TOKEN", jsonObject, hierba, hierba?.id ?: 0, null).execute(graphUrl)
                 }
 
-                MemoryBeanAux.getUserFbData()?.let { fbData ->
+                MemoryBeanAux.userFbData?.let { fbData ->
                     if (!fbData[0].equals("sinnombre", ignoreCase = true)) {
                         layoutUserName.isErrorEnabled = false
                         editTextUserName.setText(fbData[0])
@@ -357,25 +357,25 @@ class DetailResFragment : Fragment() {
                         val email = editTextEmail.text.toString()
                         val comentario = editTextComentario.text.toString()
 
-                        if (MemoryBeanAux.getUserFbData() != null ||
+                        if (MemoryBeanAux.userFbData != null ||
                             (usuario.isNotEmpty() && email.isNotEmpty() && Patterns.EMAIL_ADDRESS.matcher(email).matches() && comentario.length > 4)) {
 
                             val progressBar = ProgressBar(context)
                             val jsonObject = JSONObject().apply {
                                 put("id", (hierba?.comentarios?.size ?: 0) + 1)
 
-                                var nombreToSend = MemoryBeanAux.getUserFbData()?.get(0) ?: "sinnombre"
+                                var nombreToSend = MemoryBeanAux.userFbData?.get(0) ?: "sinnombre"
                                 if (nombreToSend.equals("sinnombre", ignoreCase = true)) nombreToSend = usuario
                                 put("nombreUsuario", nombreToSend)
-                                put("fechaNacUsuario", MemoryBeanAux.getUserFbData()?.get(2) ?: "")
+                                put("fechaNacUsuario", MemoryBeanAux.userFbData?.get(2) ?: "")
 
-                                var emailToSend = MemoryBeanAux.getUserFbData()?.get(3) ?: "sincorreo"
+                                var emailToSend = MemoryBeanAux.userFbData?.get(3) ?: "sincorreo"
                                 if (emailToSend.equals("sincorreo", ignoreCase = true)) emailToSend = email
                                 put("emailUsuario", emailToSend)
                                 put("comentario", comentario)
-                                put("ciudad", MemoryBeanAux.getUserFbData()?.get(4) ?: "")
-                                put("pais", MemoryBeanAux.getUserFbData()?.get(5) ?: "")
-                                put("imgFbUrlUsuario", MemoryBeanAux.getUserFbUlrImage() ?: profileUser?.getProfilePictureUri(100, 100)?.toString() ?: "")
+                                put("ciudad", MemoryBeanAux.userFbData?.get(4) ?: "")
+                                put("pais", MemoryBeanAux.userFbData?.get(5) ?: "")
+                                put("imgFbUrlUsuario", MemoryBeanAux.userFbUlrImage ?: profileUser?.getProfilePictureUri(100, 100)?.toString() ?: "")
                                 put("estado", "inhabilitado")
                             }
 
