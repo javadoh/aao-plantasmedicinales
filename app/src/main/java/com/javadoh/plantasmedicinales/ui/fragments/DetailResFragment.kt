@@ -38,6 +38,7 @@ import com.javadoh.plantasmedicinales.ui.activities.DetailResActivity
 import com.javadoh.plantasmedicinales.ui.activities.FacebookLoginComment
 import com.javadoh.plantasmedicinales.utils.PostAsyncHttpTask
 import com.javadoh.plantasmedicinales.utils.TextAnimationColor
+import com.javadoh.plantasmedicinales.utils.WindowInsetsHelper
 import com.javadoh.plantasmedicinales.utils.bean.MemoryBeanAux
 import com.squareup.picasso.Picasso
 import org.json.JSONObject
@@ -133,10 +134,8 @@ class DetailResFragment : Fragment() {
         val mContext = requireActivity()
 
         toolbar = rootView.findViewById(R.id.toolbar)
-        toolbar.setLogo(R.mipmap.ic_launcher)
         (activity as AppCompatActivity).setSupportActionBar(toolbar)
-        (activity as AppCompatActivity).supportActionBar?.setDisplayUseLogoEnabled(true)
-        (activity as AppCompatActivity).supportActionBar?.setDisplayShowHomeEnabled(true)
+        WindowInsetsHelper.applyStatusBarPadding(toolbar)
 
         scrollFragment = rootView.findViewById(R.id.scrollFragmentLayout)
         imageViewUrl = rootView.findViewById(R.id.img_hierba_card_res_ppal)

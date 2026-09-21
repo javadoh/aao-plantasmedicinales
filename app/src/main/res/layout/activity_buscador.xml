@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     xmlns:ads="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.activities.BuscadorActivity"
+    android:id="@+id/rootBuscador"
     android:orientation="vertical"
     android:background="#020202">
 

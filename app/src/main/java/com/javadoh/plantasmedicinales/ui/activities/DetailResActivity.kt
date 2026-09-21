@@ -12,8 +12,10 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.Button
 import android.widget.FrameLayout
+import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import android.widget.TextView
 import android.widget.Toast
@@ -33,6 +35,7 @@ import com.javadoh.plantasmedicinales.io.Constants
 import com.javadoh.plantasmedicinales.io.beans.HierbasBean
 import com.javadoh.plantasmedicinales.ui.fragments.DetailResFragment
 import com.javadoh.plantasmedicinales.utils.GoogleInAppPayUtils
+import com.javadoh.plantasmedicinales.utils.WindowInsetsHelper
 import java.security.MessageDigest
 
 class DetailResActivity : AppCompatActivity() {
@@ -89,6 +92,7 @@ class DetailResActivity : AppCompatActivity() {
         accessToken?.let { Log.d(TAG, "AccessToken: ${it.token}") }
 
         setContentView(R.layout.detail_res_herb_activity)
+        WindowInsetsHelper.applyNavigationBarPadding(findViewById<RelativeLayout>(R.id.mainRelativeLayoutDetail))
 
         if (!Constants.isAdsDisabled) {
             mAdView = findViewById(R.id.adBannerView)
@@ -210,16 +214,18 @@ class DetailResActivity : AppCompatActivity() {
     private fun showStoreDialog() {
         val vistaDialogo = LayoutInflater.from(this).inflate(R.layout.dialog_store_from_menu, null)
         val alertDialog = AlertDialog.Builder(this).setView(vistaDialogo).create()
+        alertDialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
 
-        val txtTituloProducto = vistaDialogo.findViewById<TextView>(R.id.txtTituloProducto)
+        val txtPrecioProducto = vistaDialogo.findViewById<TextView>(R.id.txtPrecioProducto)
         val btnPagar = vistaDialogo.findViewById<Button>(R.id.buttonPay)
-
-        txtTituloProducto.text = getString(R.string.subTituloPago)
+        val layoutAlreadyPurchased = vistaDialogo.findViewById<LinearLayout>(R.id.layoutAlreadyPurchased)
 
         if (Constants.isAdsDisabled) {
-            btnPagar.text = getString(R.string.compra_realizada_store)
-            btnPagar.isEnabled = false
+            btnPagar.visibility = View.GONE
+            txtPrecioProducto.visibility = View.GONE
+            layoutAlreadyPurchased.visibility = View.VISIBLE
         } else {
+            txtPrecioProducto.text = "${getString(R.string.monedaPago)}${getString(R.string.montoPagoPremium)}"
             btnPagar.setOnClickListener {
                 if (Constants.internetOn) {
                     inAppPayApi.purchaseRemoveAds()

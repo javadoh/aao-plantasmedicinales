@@ -4,8 +4,6 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="com.android.vending.BILLING" />
 
     <!-- Note for SDK 35: WRITE_EXTERNAL_STORAGE is ignored on Android 11+.
@@ -52,7 +50,7 @@
 
         <provider
             android:name="com.facebook.FacebookContentProvider"
-            android:authorities="com.facebook.app.FacebookContentProvider@string/facebook_app_id"
+            android:authorities="com.facebook.app.FacebookContentProvider154138268330644"
             android:exported="true" />
 
         <activity

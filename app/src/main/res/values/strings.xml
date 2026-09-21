@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Natural Medicinal Plants</string>
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Configuration</string>
 
     <!-- TITLES -->
@@ -34,7 +33,7 @@
     <string name="commentText"><![CDATA[<b>Comment: </b>]]></string>
 
     <!-- HINTS -->
-    <string name="hintSearch">Enter your search...</string>
+    <string name="hintSearch">Enter your search…</string>
     <string name="hintCommentName">Enter your name and lastname</string>
     <string name="hintCommentEmail">Enter your email</string>
     <string name="hintCommentText">Enter your comment</string>
@@ -43,7 +42,7 @@
     <string name="btn_text_busqueda_1">Search Herbs</string>
     <string name="btn_text_busqueda_2">Search symptom</string>
     <string name="btn_enviar">SEND</string>
-    <string name="btn_cancelar">CANCEL</string>
+    <string name="btn_cancelar">Cancel</string>
     <string name="busqueda_hierba">PLANT</string>
     <string name="busqueda_sintoma">SYMPTOM</string>
     <string name="btn_face_continue">CONTINUE</string>
@@ -59,8 +58,8 @@
 
     <!-- DIALOGO TIENDA -->
     <string name="compra_realizada_store">You already bought our disable pub product. ¡Thank you!</string>
-    <string name="montoPagoPremium">0.99</string>
-    <string name="monedaPago">US$</string>
+    <string name="montoPagoPremium" translatable="false">0.99</string>
+    <string name="monedaPago" translatable="false">US$</string>
     <string name="subTituloPago">SINGLE PAYMENT FOR PERMANENTLY DISABLE THE ADVERTISING</string>
     <string name="btnpagar">CHECKOUT</string>
 
@@ -69,7 +68,7 @@
     <string name="terminos_clickable_inicio"><![CDATA[<u>terms and conditions.</u>]]></string>
 
     <!-- ERRORES -->
-    <string name="errorHomeCheck">¡Hi!, you must accept the terms and conditions before continue with the search...</string>
+    <string name="errorHomeCheck">¡Hi!, you must accept the terms and conditions before continue with the search…</string>
     <string name="errorSinResultados">THERE IS NO RESULTS</string>
     <string name="errorSinConexion">IT WAS NOT POSSIBLE TO CONNECT TO SERVER, PLEASE TRY BACK AGAIN LATER.</string>
     <string name="errorGral">There was an error: </string>
@@ -77,9 +76,9 @@
     <string name="errorTienda">Could not call google in app pay services, we are sorry. We suggest you to check your google store installation, configuration of your computer and your gmail account on your phone.</string>
     <string name="errorCommentForm">You must enter the data correctly at the form.</string>
     <string name="errorImagesAdapter">There was a problem with the image. ¡We are sorry!</string>
-    <string name="errorInAppPayCreated">We could not connect with the google payment services, sorry... Please try later and make sure you have internet access.</string>
+    <string name="errorInAppPayCreated">We could not connect with the Google payment services, sorry… Please try later and make sure you have internet access.</string>
     <string name="errorNoInternet">There is no internet connection, we cannot continue without it.</string>
-    <string name="errorCannotRate">There was an error launching google play rate, we are sorry!. Please try it later.</string>
+    <string name="errorCannotRate">There was an error launching Google Play rate, we are sorry!. Please try it later.</string>
     <string name="errorInputSearchChars">Please, do not enter any special characters or numbers.</string>
     <string name="errorSharePlant">We are sorry, there was an error, we cannot share the plant information with the social media.</string>
 
@@ -94,14 +93,14 @@
 
     <!-- FACEBOOK -->
     <string name="facebook_app_id">154138268330644</string>
-    <string name="facebook_login_protocol_scheme">fb154138268330644</string>
+    <string name="facebook_login_protocol_scheme" translatable="false">fb154138268330644</string>
     <string name="facebook_client_token">5e2d2a3e46d42c571fa93467b185e74e</string>
     <string name="btnfacebookasociar">COMMENT WITH FACEBOOK</string>
     <string name="action_login_facebook">Log In</string>
     <string name="action_logout_facebook">Log Out</string>
     <string name="facebookCommentSucceed">Commentary was entered successfully, it must be approved by a Manager in the next hours.</string>
-    <string name="facebookDataRecovered">We have recovered the data from facebook without sign you again ... Please reopens the comments.</string>
-    <string name="facebookRecoverDataSingle">Recovering data...</string>
+    <string name="facebookDataRecovered">We have recovered the data from facebook without sign you again … Please reopens the comments.</string>
+    <string name="facebookRecoverDataSingle">Recovering data…</string>
 
     <!-- DATA API -->
     <string name="noCity">-</string>
@@ -124,11 +123,11 @@
     <string name="adintersticial">ca-app-pub-9433945240629594/6101598269</string>
 
     <!-- PAYPAL -->
-    <string name="idpaypalkey">Abfterl8vA6SK_wCFgvT0C8u6-c9XWqf4suVA8kN0LUckzDsxZylWYGcs0W5nkBfKG3CFWvIx86vqVSr</string>
+    <string name="idpaypalkey" translatable="false">Abfterl8vA6SK_wCFgvT0C8u6-c9XWqf4suVA8kN0LUckzDsxZylWYGcs0W5nkBfKG3CFWvIx86vqVSr</string>
 
     <!-- UPDATES -->
-    <string name="incomingFav">As soon as possible, we will implement the option to add favorites...</string>
-    <string name="incomingShare">As soon as possible, we will implement the option to share information on the social networks...</string>
+    <string name="incomingFav">As soon as possible, we will implement the option to add favorites…</string>
+    <string name="incomingShare">As soon as possible, we will implement the option to share information on the social networks…</string>
 
     <!-- LOCALIZATION -->
     <string name="flagLocalization">EN</string>

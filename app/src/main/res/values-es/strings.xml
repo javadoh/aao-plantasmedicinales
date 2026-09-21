@@ -33,7 +33,7 @@
     <string name="commentText"><![CDATA[<b>Comentario: </b>]]></string>
 
     <!-- HINTS -->
-    <string name="hintSearch">Ingrese su búsqueda...</string>
+    <string name="hintSearch">Ingrese su búsqueda…</string>
     <string name="hintCommentName">Ingrese su nombre y apellido</string>
     <string name="hintCommentEmail">Ingrese su email</string>
     <string name="hintCommentText">Ingrese su comentario</string>
@@ -63,10 +63,10 @@
 
     <!-- CHECKBOX -->
     <string name="terminos_pantalla_inicio">Acepto y he leído los</string>
-    <string name="terminos_clickable_inicio"><![CDATA[<u>términos y condiciones.</u>]]></string>
+    <string name="terminos_clickable_inicio"><![CDATA[términos y condiciones.]]></string>
 
     <!-- ERRORES -->
-    <string name="errorHomeCheck">¡Hola!, debe aceptar los términos y condiciones antes de continuar con la búsqueda...</string>
+    <string name="errorHomeCheck">¡Hola!, debe aceptar los términos y condiciones antes de continuar con la búsqueda…</string>
     <string name="errorSinResultados">NO HAY RESULTADOS</string>
     <string name="errorSinConexion">NO FUE POSIBLE CONECTAR AL SERVIDOR, POR FAVOR INTENTE MÁS TARDE.</string>
     <string name="errorGral">Hubo un error: </string>
@@ -74,11 +74,20 @@
     <string name="errorTienda">No se pudo llamar a los servicios de pago de Google. Sugerimos revisar su instalación de la tienda, configuración de su computadora y cuenta de Gmail.</string>
     <string name="errorCommentForm">Debe ingresar los datos correctamente en el formulario.</string>
     <string name="errorImagesAdapter">Hubo un problema con la imagen. ¡Lo sentimos!</string>
-    <string name="errorInAppPayCreated">No pudimos conectar con los servicios de pago de Google... Por favor intente más tarde y asegúrese de tener acceso a internet.</string>
+    <string name="errorInAppPayCreated">No pudimos conectar con los servicios de pago de Google… Por favor intente más tarde y asegúrese de tener acceso a internet.</string>
     <string name="errorNoInternet">No hay conexión a internet, no podemos continuar sin ella.</string>
     <string name="errorCannotRate">Hubo un error al lanzar la calificación de Google Play. Inténtelo más tarde.</string>
     <string name="errorInputSearchChars">Por favor, no ingrese caracteres especiales ni números.</string>
     <string name="errorSharePlant">Lo sentimos, hubo un error, no podemos compartir la información de la planta.</string>
+
+    <!-- TERMINOS Y CONDICIONES -->
+    <string name="terminos_condiciones_text">El cliente se compromete a utilizar los servicios de forma diligente, correcta y lícita y, en particular, únicamente a título informativo y sin carácter limitativo, se compromete a abstenerse de: utilizar la información contenida en esta aplicación sin la disposición de asumir el riesgo que esto pueda conllevar. Es deber del usuario profundizar en la información otorgada en esta aplicación. El uso de plantas medicinales naturales para fines contrarios a la ley, la moral y las buenas costumbres generalmente aceptadas o el orden público; reproducir o copiar, distribuir, permitir el acceso del público a través de cualquier modalidad de comunicación pública, transformar o modificar los Servicios, a menos que cuente con la autorización del titular de los correspondientes derechos o ello resulte legalmente permitido; realizar cualquier acto que pueda ser considerado una vulneración de cualesquiera derechos de propiedad intelectual o industrial pertenecientes a JAVADOH S.A o a terceros; emplear los servicios y en particular la información de cualquier clase obtenida a través de la aplicación para remitir publicidad, comunicaciones con fines de venta directa o con cualquier otra clase de finalidad comercial, mensajes no solicitados dirigidos a una pluralidad de personas con independencia de su finalidad, así como comercializar o divulgar de cualquier modo dicha información; el cliente responderá de los daños y perjuicios de toda naturaleza que JAVADOH S.A pueda sufrir, con ocasión o como consecuencia del incumplimiento de cualquiera de las obligaciones anteriormente expuestas así como de cualesquiera otras incluidas en las presentes Condiciones Generales y/o las impuestas por la Ley en relación con la utilización de la aplicación. JAVADOH S.A velará en todo momento por el respeto del ordenamiento jurídico vigente, y estará legitimada para interrumpir, a su entera discreción, el servicio o excluir al cliente del Sitio Web en caso de presunta comisión, completa o incompleta, de alguno de los delitos o faltas tipificados por el Código Penal vigente, o en caso de observar cualesquiera conductas que a juicio de JAVADOH S.A resulten contrarias a estas Condiciones Generales, las Condiciones Generales de Contratación que operan para este Sitio Web, la Ley, las normas establecidas por JAVADOH S.A o sus colaboradores o que puedan perturbar el buen funcionamiento, imagen, credibilidad y/o prestigio de JAVADOH S.A o sus colaboradores.</string>
+
+    <!-- FAQ -->
+    <string name="textoBusquedaFaq">Para buscar ingrese el nombre, alias o nombre científico con el que conoce la planta/hierba/árbol/fruto; también puede buscar por un nombre de síntoma/enfermedad/condición/área. Si no obtiene resultados, intente con sinónimos, acentos o palabras acortadas.</string>
+    <string name="textoInformacion">Al refinar su búsqueda se mostrará una colección de plantas con una imagen descriptiva de las mismas, el nombre y el alias; al hacer clic en el nombre o alias se mostrará el detalle de la planta que proporciona información sobre su descripción, partes utilizadas, indicaciones, formas de uso o empleo, contraindicaciones, síntomas asociados con su uso, origen, ubicación, usos gastronómicos, entre otros, además de comentarios que comparten las experiencias de los usuarios para los usuarios.</string>
+    <string name="textoReferencias">Plantas medicinales naturales se ha basado principalmente en <b>Wikipedia</b> para la construcción de su información, así como en algunos otros textos educativos e informativos en el área de la medicina natural. Las imágenes se basan principalmente en la vista natural, es decir, para que sean reconocidas en su hábitat natural.</string>
+    <string name="textoFacebookCommentsFaq">La aplicación tiene la funcionalidad de enviar comentarios tanto de forma integrada con Facebook, como también para aquellos usuarios que no tienen perfil en la red social, ingresando su nombre, correo electrónico y comentario respectivamente. Esta función se puede encontrar en el detalle de cada planta, árbol o fruto, tanto haciendo clic en el botón Agregar comentarios, como en el menú de la parte superior en el cual podrá iniciar o cerrar sesión en Facebook cuando lo desee.</string>
 
     <!-- LOCALIZATION -->
     <string name="flagLocalization">ES</string>
@@ -92,18 +101,50 @@
 
     <!-- FACEBOOK -->
     <string name="facebook_app_id">154138268330644</string>
-    <string name="facebook_login_protocol_scheme">fb154138268330644</string>
     <string name="facebook_client_token">5e2d2a3e46d42c571fa93467b185e74e</string>
     <string name="btnfacebookasociar">CONTINUAR CON FACEBOOK</string>
     <string name="action_login_facebook">Iniciar sesión</string>
     <string name="action_logout_facebook">Cerrar sesión</string>
     <string name="facebookCommentSucceed">El comentario fue ingresado correctamente, debe ser aprobado por un administrador en las próximas horas.</string>
-    <string name="facebookDataRecovered">Hemos recuperado los datos de facebook sin necesidad de iniciar sesión de nuevo ... Por favor abra los comentarios de nuevo.</string>
-    <string name="facebookRecoverDataSingle">Recuperando datos...</string>
+    <string name="facebookDataRecovered">Hemos recuperado los datos de facebook sin necesidad de iniciar sesión de nuevo… Por favor abra los comentarios de nuevo.</string>
+    <string name="facebookRecoverDataSingle">Recuperando datos…</string>
 
     <!-- ADMOB -->
     <string name="ad_app_id">ca-app-pub-9433945240629594~8415936266</string>
     <string name="adbanner">ca-app-pub-9433945240629594/3148131860</string>
     <string name="adintersticial">ca-app-pub-9433945240629594/6101598269</string>
+
+    <!-- UPDATE NEWS -->
+    <string name="proxUpdateNews2">En nuestras próximas actualizaciones incluiremos nuevas plantas, árboles frutales, así como nuevos módulos, secciones y funciones de interés para los usuarios, incluyendo cualquier mejora necesaria en la aplicación; todo lo anterior, de la mano con el crecimiento de los usuarios de la aplicación y sus requerimientos.</string>
+    <string name="proxUpdateNews">"07/11/2019 \n \n -Nuevas plantas: Valeriana, Rábano, Tabaco. \n \n - Mejoras en la ventana de detalles. \n \n - Nueva presentación "</string>
+
+    <!-- SHARE WASSAP -->
+    <string name="tituloSharePlantSubject">", ¡creo que te será muy útil!, búscala por su nombre. Debes instalar la aplicación. Saludos."</string>
+    <string name="tituloSharePlant">"¡Hola! Quiero compartir contigo esta información sobre la "</string>
+    <string name="tituloSharePlant2">" planta, descárgala y búscala en esta aplicación: https://play.google.com/store/apps/details?id=com.javadoh.plantasmedicinalesnaturales"</string>
+
+    <string name="termscheckselection">Selección de acepta términos y condiciones para el uso de la aplicación</string>
+    <string name="bannerpubend">Banner de publicidad inferior</string>
+    <string name="newsapp">Noticias y novedades de la aplicación</string>
+    <string name="nodataimg">Imagen que representa que no hay datos con ese texto de búsqueda</string>
+    <string name="nointernetimg">Imagen de sin conexión a internet</string>
+
+    <!-- UPDATES -->
+    <string name="incomingFav">Lo antes posible, implementaremos la opción de agregar a favoritos…</string>
+    <string name="incomingShare">Lo antes posible, implementaremos la opción de compartir información en las redes sociales…</string>
+
+    <!-- DATA API -->
+    <string name="noCity">-</string>
+    <string name="noCountry">Internacional</string>
+    <string name="noUserName">sinnombre</string>
+    <string name="noBirthday">Sin fecha de nacimiento</string>
+    <string name="noGender">No definido</string>
+    <string name="noEmail">sincorreo</string>
+
+    <!-- FACEBOOK ERRORS -->
+    <string name="facebookGralError">Ocurrió un error al obtener los datos de Facebook. Pedimos disculpas, verificaremos qué sucedió.</string>
+    <string name="facebookCommentError">Ocurrió un error al enviar el comentario. Pedimos disculpas, verificaremos qué sucedió.</string>
+    <string name="facebookCancelSession">Se canceló el inicio de sesión de Facebook.</string>
+    <string name="facebookErrorSession">Lo sentimos, ha ocurrido un error al iniciar sesión en Facebook.</string>
 
 </resources>

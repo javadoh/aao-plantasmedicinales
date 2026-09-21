@@ -1,10 +1,8 @@
 package com.javadoh.plantasmedicinales.ui.activities
 
-import android.Manifest
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.media.AudioManager
 import android.media.MediaPlayer
 import android.os.Bundle
@@ -21,8 +19,6 @@ import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import androidx.preference.PreferenceManager
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
@@ -34,18 +30,11 @@ import com.google.android.material.textfield.TextInputLayout
 import com.javadoh.plantasmedicinales.R
 import com.javadoh.plantasmedicinales.io.Constants
 import com.javadoh.plantasmedicinales.utils.GoogleInAppPayUtils
+import com.javadoh.plantasmedicinales.utils.WindowInsetsHelper
 import java.io.IOException
 import java.util.regex.Pattern
 
 class BuscadorActivity : AppCompatActivity(), View.OnClickListener {
-
-    private val permissions = arrayOf(
-        Manifest.permission.ACCESS_COARSE_LOCATION,
-        Manifest.permission.ACCESS_FINE_LOCATION,
-        Manifest.permission.ACCESS_NETWORK_STATE,
-        Manifest.permission.INTERNET
-        // READ/WRITE_EXTERNAL_STORAGE removed or managed differently for SDK 35 compatibility
-    )
 
     private lateinit var editTxtBusqueda: EditText
     private lateinit var btnHierbas: Button
@@ -61,7 +50,6 @@ class BuscadorActivity : AppCompatActivity(), View.OnClickListener {
     private var dataUser: Array<String>? = null
 
     companion object {
-        private const val REQUEST_CODE = 12
         val TAG: String = BuscadorActivity::class.java.name
         private var tipoDeBusqueda: String? = null
         private var inputValidationOk: String? = null
@@ -70,10 +58,6 @@ class BuscadorActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_buscador)
-
-        if (permissions.any { ContextCompat.checkSelfPermission(this, it) != PackageManager.PERMISSION_GRANTED }) {
-            ActivityCompat.requestPermissions(this, permissions, REQUEST_CODE)
-        }
 
         volumeControlStream = AudioManager.STREAM_MUSIC
         setPlayer(this)
@@ -102,9 +86,8 @@ class BuscadorActivity : AppCompatActivity(), View.OnClickListener {
         btnSintomas.setOnClickListener(this)
 
         setSupportActionBar(toolbar)
-        supportActionBar?.setLogo(R.mipmap.ic_launcher)
-        supportActionBar?.setDisplayUseLogoEnabled(true)
-        supportActionBar?.setDisplayShowHomeEnabled(true)
+        WindowInsetsHelper.applyStatusBarPadding(toolbar)
+        WindowInsetsHelper.applyNavigationBarPadding(findViewById(R.id.rootBuscador))
 
         val textTermsConditionsHome = findViewById<TextView>(R.id.textTermsConditionsHome)
         val textTermsConditionsClickable = findViewById<TextView>(R.id.textTermsConditionsClickable)
@@ -182,16 +165,18 @@ class BuscadorActivity : AppCompatActivity(), View.OnClickListener {
     private fun showStoreDialog() {
         val vistaDialogo = LayoutInflater.from(this).inflate(R.layout.dialog_store_from_menu, null)
         val alertDialog = AlertDialog.Builder(this).setView(vistaDialogo).create()
+        alertDialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
 
-        val txtTituloProducto = vistaDialogo.findViewById<TextView>(R.id.txtTituloProducto)
+        val txtPrecioProducto = vistaDialogo.findViewById<TextView>(R.id.txtPrecioProducto)
         val btnPagar = vistaDialogo.findViewById<Button>(R.id.buttonPay)
-
-        txtTituloProducto.text = getString(R.string.subTituloPago)
+        val layoutAlreadyPurchased = vistaDialogo.findViewById<LinearLayout>(R.id.layoutAlreadyPurchased)
 
         if (Constants.isAdsDisabled) {
-            btnPagar.text = getString(R.string.compra_realizada_store)
-            btnPagar.isEnabled = false
+            btnPagar.visibility = View.GONE
+            txtPrecioProducto.visibility = View.GONE
+            layoutAlreadyPurchased.visibility = View.VISIBLE
         } else {
+            txtPrecioProducto.text = "${getString(R.string.monedaPago)}${getString(R.string.montoPagoPremium)}"
             btnPagar.setOnClickListener {
                 if (Constants.internetOn) {
                     inAppPayApi.purchaseRemoveAds()

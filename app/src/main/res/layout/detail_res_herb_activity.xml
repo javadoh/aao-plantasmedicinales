@@ -21,7 +21,6 @@
 
     <FrameLayout android:id="@+id/detail_res_fragment_id"
         android:layout_width="match_parent" android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         tools:layout="@layout/detail_res_herb_fragment"

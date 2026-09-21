@@ -26,6 +26,7 @@ import com.javadoh.plantasmedicinales.io.beans.HierbasBean
 import com.javadoh.plantasmedicinales.ui.adapters.BusquedaRespuestaAdapter
 import com.javadoh.plantasmedicinales.ui.fragments.RateDialogFragment
 import com.javadoh.plantasmedicinales.utils.AsyncHttpTask
+import com.javadoh.plantasmedicinales.utils.WindowInsetsHelper
 import java.net.URLEncoder
 
 class BusquedaRespuestaActivity : AppCompatActivity() {
@@ -51,10 +52,9 @@ class BusquedaRespuestaActivity : AppCompatActivity() {
         }
 
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
-        toolbar.setLogo(R.mipmap.ic_launcher)
         setSupportActionBar(toolbar)
-        supportActionBar?.setDisplayUseLogoEnabled(true)
-        supportActionBar?.setDisplayShowHomeEnabled(true)
+        WindowInsetsHelper.applyStatusBarPadding(toolbar)
+        WindowInsetsHelper.applyNavigationBarPadding(findViewById(R.id.rootRespuesta))
 
         mRecyclerView = findViewById(R.id.recycler_view)
         if (!Constants.isAdsDisabled) {
